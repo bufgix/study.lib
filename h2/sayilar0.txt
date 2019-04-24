@@ -1,0 +1,12 @@
+5. biti 0 olan sayinin 4. biti 1 yapıldı: 15
+5. biti 0 olan sayinin 4. biti 1 yapıldı: 14
+5. biti 0 olan sayinin 4. biti 1 yapıldı: 12
+5. biti 0 olan sayinin 4. biti 1 yapıldı: 8
+5. biti 0 olan sayinin 4. biti 1 yapıldı: 13
+5. biti 0 olan sayinin 4. biti 1 yapıldı: 13
+5. biti 0 olan sayinin 4. biti 1 yapıldı: 12
+5. biti 0 olan sayinin 4. biti 1 yapıldı: 8
+5. biti 0 olan sayinin 4. biti 1 yapıldı: 12
+5. biti 0 olan sayinin 4. biti 1 yapıldı: 13
+5. biti 0 olan sayinin 4. biti 1 yapıldı: 12
+5. biti 0 olan sayinin 4. biti 1 yapıldı: 11
