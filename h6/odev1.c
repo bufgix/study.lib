@@ -14,13 +14,15 @@ int main()
     int i;
     for (i = 0; i < 20; i++)
     {
-        *(arr + i) = rand()%100;
+        *(arr + i) = rand() % 100;
     }
     selection_sort(arr, 20);
     for (i = 0; i < 20; i++)
     {
         printf("%d ", *(arr + i));
     }
+
+    free(arr);
     getchar();
 }
 
@@ -32,7 +34,8 @@ void selection_sort(int *arr, int len)
         min = i;
         for (j = i + 1; j < len; j++)
         {
-            if (*(arr + j) < *(arr + min)) min = j;
+            if (*(arr + j) < *(arr + min))
+                min = j;
         }
 
         int tmp = *(arr + i);
