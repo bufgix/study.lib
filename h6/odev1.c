@@ -28,18 +28,18 @@ int main()
 
 void selection_sort(int *arr, int len)
 {
-    int i, j, min;
+    int i, j, max;
     for (i = 0; i < len - 1; i++)
     {
-        min = i;
+        max = i;
         for (j = i + 1; j < len; j++)
         {
-            if (*(arr + j) < *(arr + min))
-                min = j;
+            if (*(arr + j) > *(arr + max))
+                max = j;
         }
 
         int tmp = *(arr + i);
-        *(arr + i) = *(arr + min);
-        *(arr + min) = tmp;
+        *(arr + i) = *(arr + max);
+        *(arr + max) = tmp;
     }
 }
