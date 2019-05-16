@@ -11,8 +11,7 @@
 */
 
 
-const char *FILEPATH = "h8/bir.txt"; // programı calıstırınca h8 diye bi klasor olacak
-                                    // onun icinde dosya. Aglamayin sonra
+const char *FILEPATH = "bir.txt";
 
 struct Node
 {
