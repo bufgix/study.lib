@@ -128,7 +128,6 @@ Node *push_node(Node *head, Node *add)
         tempt = tempt->next;
     }
     tempt->next = add;
-    ;
     add->next = head;
 
     return add;
