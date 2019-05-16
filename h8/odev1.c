@@ -49,6 +49,7 @@ int main()
 
     print_node(head);
     sort_node(head);
+    printf("\n\n");
     print_node(head);
 
     getch();
