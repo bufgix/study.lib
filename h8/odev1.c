@@ -82,6 +82,7 @@ Node* push(Node* head, Node* add)
     }
     head->next = add;
     add->prev = head;
+    add->index = head->index + 1;
     
     return add;
 }

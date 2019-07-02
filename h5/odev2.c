@@ -47,7 +47,7 @@ int partition(int arr[],int left, int right, unsigned int reverse)
             while(arr[i] < pivot) i++;  // No exchange
             while(arr[j] > pivot) j--;  // No exchange
         }else{  // Large to small
-            while(arr[i] > pivot) i++;  // No exchange
+            while(arr[i] >  pivot) i++;  // No exchange
             while(arr[j] < pivot) j--;  // No exchange
         }
 

@@ -21,6 +21,7 @@ Node *push_node(Node *, Node *);
 Node *delete_node(Node *, int);
 void sort_node(Node *);
 void print_node(Node *);
+void clean(Node*);
 
 int main()
 {
@@ -32,7 +33,7 @@ int main()
     sort_node(head);*/
 
     Node *head;
-    char *help_text = (char *)"1 - EKLE\n2 - SIL\n3 - SIRALA(Bu islem geri alinmaz)\n4 - YAZDIR\n\n[>] ";
+    char *help_text = (char *)"1 - EKLE\n2 - SIL\n3 - SIRALA(Bu islem geri alinmaz)\n4 - YAZDIR\n5 - TEMIZLE ve CIK\n\n[>] ";
     int inital, num;
     printf("Once bir deger girin. Bu listeini ilk elemani olacak\nDeger: ");
     scanf("%d", &inital);
@@ -64,7 +65,13 @@ int main()
         else if (inital == 4)
         {
             print_node(head);
+        }else
+        {
+            clean(head);
+            printf("Bye");
+            break;
         }
+        
     }
     getch();
 }
@@ -140,6 +147,18 @@ Node *create_node(int val)
     nw->data = val;
 
     return nw;
+}
+void clean(Node* head)
+{
+    Node* tempt = head->next;
+    
+    while(tempt != head)
+    {
+        Node* garbage = tempt;
+        tempt = tempt->next;
+        free(garbage);
+    }
+    free(tempt);
 }
 
 void print_node(Node *head)
