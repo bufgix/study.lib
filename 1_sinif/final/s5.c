@@ -38,7 +38,7 @@ int main(int argc, char const *argv[])
         scanf("%d", &num);
         if (wbit(num, 5) == 0)
         {
-            printf("%dn\n", num >> 1);
+            printf("%d\n", num >> 1);
         }
         else
         {
