@@ -3,6 +3,12 @@
 #include <stdlib.h>
 #include <string.h>
 
+/**
+ * Bu dosya ödev değildir
+ * "struct içinde nasıl fonksiyon yazılır?"
+ * örneğidir.
+*/
+
 
 // Person struct
 struct Person
@@ -69,7 +75,7 @@ int main(int argc, char const *argv[])
     p->setName(p->self, (char*) "Ahmet");
     p->printPerson(p->self);
     p->destroy(p->self);
-    
+
     getch();
     return 0;
 }
