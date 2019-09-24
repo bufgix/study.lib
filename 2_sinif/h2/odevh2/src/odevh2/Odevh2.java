@@ -14,9 +14,13 @@ public class Odevh2 {
      */
     public static void main(String[] args) {
         /*
-            args bir Array. Bunun bir List'e dönüşmesi gerek.
-            altaki kod Array'i List'e dönüştürür.
-        
+        args bir Array. Bunun bir List'e dönüşmesi gerek.
+        altaki kod Array'i List'e dönüştürür.
+
+        .contains() ve .containsAll() methodları hakkında
+        kaynaklar: 
+            http://tutorials.jenkov.com/java-collections/list.html
+            https://www.mkyong.com/java/java-check-if-array-contains-a-certain-value/
         */
         List<String> argsList = Arrays.asList(args);
 
