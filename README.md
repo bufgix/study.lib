@@ -1,5 +1,4 @@
-## KTU haftalık C ödevleri
+## KTU haftalık programlama ve algoritma ödevleri
 
-Buraya verilen C ödevlerini atacağım. İyi günler
 
 Not: Haftalar doğru olmayabilir.
