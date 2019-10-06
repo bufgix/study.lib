@@ -1,11 +1,13 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Odev1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        Random rand = new Random();
         
-        System.out.print("Sayi > ");
-        int number = scanner.nextInt();
+        int number = rand.nextInt(1000);
+
 
         while (true) {
             System.out.print("Tahmin -> ");
@@ -15,7 +17,7 @@ public class Odev1 {
             } else if (guess < number) {
                 System.out.println("Yükselt");
             } else {
-                System.out.println("Buldun (Sanki bilmiyormuş gibi)");
+                System.out.println("Buldun");
                 break;
             }
         }
