@@ -5,9 +5,13 @@ public class Odev1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Random rand = new Random();
-        
-        int number = rand.nextInt(1000);
 
+        System.out.print("Aralık seçin Orn: 3-19  -> ");
+        String rawData = scanner.nextLine().replace(" ", "");
+        int start = Integer.parseInt(rawData.split("-")[0]);
+        int end = Integer.parseInt(rawData.split("-")[1]);
+
+        int number = rand.ints(start, end).findFirst().getAsInt();
 
         while (true) {
             System.out.print("Tahmin -> ");
