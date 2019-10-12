@@ -6,7 +6,7 @@
 
 const char *FILENAME = "2_sinif\\h3\\classroom_data_strc\\data.txt";
 
-/* 
+/*
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
 mQENBF2grVMBCADUxATaohljIX3S+n4lrS94E5NJ7WphV2Dux+x/uoSizUemgGzs
@@ -40,7 +40,7 @@ PUarecNc/twxNOFEcmeZU7drLZL49/knodzAUYuMREFMiHlKyIBeJowMFlBd1/k/
 
 
 Yukardaki anahtar ooruc471@yandex.com - Ömer "Bufgix" Faruk Oruç
-kayıtlı olup kontrol amaçlıdır.
+adına kayıtlı olup kontrol amaçlıdır.
 
 
 */
