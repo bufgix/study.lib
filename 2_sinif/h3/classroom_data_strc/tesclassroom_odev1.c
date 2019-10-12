@@ -109,7 +109,6 @@ void RunPartA()
 void RunPartB()
 {
     int n;
-    ;
     printf("Kac harf istiyorsun: ");
     scanf("%d", &n);
     srand(time(NULL));
