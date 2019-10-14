@@ -96,7 +96,7 @@ int main(int argc, char const *argv[])
 {
     while (1)
     {
-        fseek(stdin, 0, SEEK_END);
+         fseek(stdin, 0, SEEK_END);
         char ch;
         printf("a - A bolumu\nb - B bolumu\nc - C bolumu\nq - Cik\n\n->");
         scanf("%c", &ch);
@@ -311,9 +311,12 @@ void sortNode(Node *head)
         {
             if (i->letter > j->letter)
             {
-                int t = i->letter;
+                char ch = i->letter;
+                int freq = i->freq;
                 i->letter = j->letter;
-                j->letter = t;
+                i->freq = j->freq;
+                j->letter = ch;
+                j->freq = freq;
             }
         }
     }
