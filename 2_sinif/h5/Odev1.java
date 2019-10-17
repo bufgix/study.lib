@@ -37,7 +37,7 @@ class Cipher {
 
 class DeCipher {
     private String plainText;
-    private StrictMath cipherText;
+    private String cipherText;
     private int key;
     ArrayList<Character> alphabet = new ArrayList<Character>();
 
@@ -53,7 +53,7 @@ class DeCipher {
         return plainText;
     }
 
-    public StrictMath getCipherText() {
+    public String getCipherText() {
         return cipherText;
     }
 
@@ -62,13 +62,14 @@ class DeCipher {
     }
 
     String decipher(String cipher) {
+        cipherText = cipher;
         StringBuilder plainTextBuild = new StringBuilder();
         for (int i = 0; i < cipher.length(); i++) {
 
             plainTextBuild.append((char) (cipher.codePointAt(i) - key));
         }
-
-        return plainTextBuild.toString();
+        plainText = plainTextBuild.toString();
+        return plainText;
     }
 
 }
@@ -80,6 +81,5 @@ public class Odev1 {
         String cipherText = cp.encipher("hello world");
         System.err.println("Sifreli: " + cipherText);
         System.out.println("Cozulmus: " + dp.decipher(cipherText));
-
     }
 }
