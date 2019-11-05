@@ -1,5 +1,11 @@
 {
     "files.exclude": {
         "*.exe": true
+    },
+    "C_Cpp.errorSquiggles": "Disabled",
+    "files.associations": {
+        "stdio.h": "c",
+        "time.h": "c",
+        "stdlib.h": "c"
     }
 }

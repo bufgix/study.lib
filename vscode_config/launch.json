@@ -1,8 +1,14 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-
-      {
+  "version": "0.2.0",
+  "configurations": [
+    {
+        "type": "java",
+        "name": "Debug Java (Launch) - External Terminal",
+        "request": "launch",
+        "console": "externalTerminal",
+        "cwd": "${workspaceFolder}"
+    },
+    {
         "name": "Run C/C++",
         "type": "cppdbg",
         "request": "launch",
@@ -15,19 +21,19 @@
         "MIMode": "gdb",
         "miDebuggerPath": "C:/MinGW64/bin/gdb.exe",
         "setupCommands": [
-          {
-            "description": "Enable pretty-printing for gdb",
-            "text": "-enable-pretty-printing",
-            "ignoreFailures": false
-          }
+            {
+                "description": "Enable pretty-printing for gdb",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": false
+            }
         ],
         "preLaunchTask": "build & run file"
-      },
-      {
+    },
+    {
         "name": "Debug C/C++",
         "type": "cppdbg",
         "request": "launch",
-        "program": "${workspaceFolder}/${fileBasenameNoExtension}.exe",
+        "program": "${workspaceFolder}\\build\\${fileBasenameNoExtension}.exe",
         "args": [],
         "stopAtEntry": false,
         "cwd": "${workspaceFolder}",
@@ -36,13 +42,13 @@
         "MIMode": "gdb",
         "miDebuggerPath": "C:/MinGW64/bin/gdb.exe",
         "setupCommands": [
-          {
-            "description": "Enable pretty-printing for gdb",
-            "text": "-enable-pretty-printing",
-            "ignoreFailures": false
-          }
+            {
+                "description": "Enable pretty-printing for gdb",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": false
+            }
         ],
         "preLaunchTask": "build & debug file"
-      }
-    ]
-  }
+    }
+]
+}
