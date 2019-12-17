@@ -96,7 +96,11 @@ int main(int argc, char const *argv[])
 {
     Node *inputStack = NULL, *tmpStack = NULL;
     inputStack = readFile("C:\\Users\\simplex\\Desktop\\work\\works\\2_sinif\\h6\\films.txt", inputStack);
+    printf("1. Adimda inputStack\n");
+    displayStack(inputStack);
+    printf("\n\n");
     tmpStack = sortStack(inputStack, tmpStack);
+    printf("3. Adimda inputStack\n");
     displayStack(tmpStack);
     system("PAUSE");
     return 0;

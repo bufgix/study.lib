@@ -3,7 +3,6 @@ Autumn,3.2
 Slumdog Millionaire,8.3
 The Shawshank Redemption,9.3
 The Godfather,9.0
-The Presence,4.4
 Schindler's List,8.9
 Chaplin,7.3
 Amelie,8.4
