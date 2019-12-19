@@ -1,7 +1,20 @@
+from PyInquirer import prompt, print_json
+
+
 TABLE_ROW = 5
 HASHTABLE = [-1 for _ in range(TABLE_ROW)]
 HASHTABLE2 = [[-1, -1] for _ in range(TABLE_ROW)]
 prev_index = -1
+
+# Uygulamanın çalışması için
+# $ pip install PyInquirer
+# Uygulama 1 için yazılan fonksiyonlar
+#   - add_1(num: str, name: str, surname: str)
+#   - search_1(num: int)
+
+# Uygulama 2 için yazılan fonksiyonlar
+#   -add_2(num: str, name: str, surname: str)
+#   -search_2(num: int)
 
 
 class Customer:
@@ -11,7 +24,7 @@ class Customer:
         self.surname = surname
 
     def __repr__(self):
-        return str(self.num)
+        return f"Customer  {self.num} {self.name} {self.surname}"
 
     def __str__(self):
         return self.__repr__()
@@ -57,14 +70,14 @@ def search_1(num: int):
         if c_hash >= TABLE_ROW:
             c_hash = 0
         print(
-            f"{_try}. Deneme {c_hash}. Satır ({HASHTABLE[c_hash]} var) ", flush=True, end="")
+            f"{_try}. Deneme ({HASHTABLE[c_hash]} var) ", flush=True, end="")
         if (isinstance(HASHTABLE[c_hash], Customer) and HASHTABLE[c_hash].num == num):
             print("Bulundu")
             return HASHTABLE[c_hash]
         else:
             print("Bulunamadı")
         c_hash += 1
-    return -1
+    return None
 
 
 def add_2(num: str, name: str, surname: str):
@@ -93,34 +106,97 @@ def add_2(num: str, name: str, surname: str):
 def search_2(num: int):
     c_hash = hash(num)
     _try = 0
-    while True:
+    for _ in range(TABLE_ROW):
         _try += 1
         print(
-            f"{_try}. Deneme {c_hash}. satır ({HASHTABLE2[c_hash][0]} var) ", flush=True, end="")
+            f"{_try}. Deneme ({HASHTABLE2[c_hash][0]} var) ", flush=True, end="")
         if isinstance(HASHTABLE2[c_hash][0], Customer) and HASHTABLE2[c_hash][0].num == num:
             print("Bulundu")
             return HASHTABLE2[c_hash][0]
         else:
             c_hash = HASHTABLE2[c_hash][1]
             print("Bulunamdı")
+    return None
 
 
-add_1(10, "Ömer", "Oruc")
-add_1(13, "Ali", "Varol")
-add_1(23, "Ahmet", "Yıldırım")
-add_1(18, "Ahmet", "Yıldırım")
-add_1(50, "Ahmet", "Yıldırım")
-pretty_table(HASHTABLE)
-print(search_1(18))
 
-print("\n\n")
 
-add_2(10, "Ömer", "Faruk")
-add_2(13, "Ali", "Varyemez")
-add_2(23, "Ahmet", "Yıldırı")
-add_2(18, "Mertcan", "Işık")
-add_2(88, "Mertcan", "Işık")
-add_2(90, "Mertcan", "Işık")
+def main():
+    global HASHTABLE, HASHTABLE2, TABLE_ROW, prev_index
+    TABLE_ROW = int(input("Tablo boyutu > "))
+    HASHTABLE = [-1 for _ in range(TABLE_ROW)]
+    HASHTABLE2 = [[-1, -1] for _ in range(TABLE_ROW)]
+    prev_index = -1
+    
+    command_sets = {
+        "uygulama 1": {
+            "ekle": add_1,
+            "ara": search_1,
+            "table": HASHTABLE
+        },
+        "uygulama 2": {
+            "ekle": add_2,
+            "ara": search_2,
+            "table": HASHTABLE2
+        }
+    }
 
-pretty_table(HASHTABLE2)
-print(search_2(18))
+    try:
+        app = prompt({
+            "type": "rawlist",
+            "name": "app",
+            "choices": ["Uygulama 1", "Uygulama 2"],
+            "message": "Hangi uygulama",
+            "filter": lambda x: x.lower()
+        })
+        functions = command_sets[app["app"]]
+        while True:
+            answers = prompt({
+                "type": "rawlist",
+                "name": "choice",
+                "choices": ["Ekle", "Ara"],
+                "message": "Hangi işlemi yapmak istiyosun?",
+                "filter": lambda x: x.lower()
+            })
+            if (answers["choice"] == "ekle"):
+                params = prompt([
+                    {
+                        "type": "input",
+                        "name": "num",
+                        "message": "Numara girin",
+                        "validate": lambda x: x.isnumeric() or "Sadece sayi girin",
+                        "filter": lambda x: int(x)
+                    },
+                    {
+                        "type": "input",
+                        "name": "name",
+                        "message": "İsim girin",
+                    },
+                    {
+                        "type": "input",
+                        "name": "surname",
+                        "message": "Soyisim girin",
+                    }
+                ])
+                functions["ekle"](
+                    params["num"], params["name"], params["surname"])
+                pretty_table(functions["table"])
+            else:
+                params = prompt({
+                    "type": "input",
+                    "name": "num",
+                    "message": "Numara girin",
+                    "validate": lambda x: x.isnumeric() or "Sadece sayi girin",
+                    "filter": lambda x: int(x)
+                })
+                res = functions["ara"](params["num"])
+                if (res):
+                    print(res)
+                else:
+                    print("Bulunamadı")
+    except KeyError:
+        pass
+
+
+if __name__ == '__main__':
+    main()
