@@ -27,7 +27,7 @@ int main(int argc, char const *argv[])
 
         // printf("Running %d... ", sizes[i]);
         clock_t begin = clock();
-        selection_sort(arr, sizes[i]);
+        sleep(2000);
         clock_t end = clock();
 
         time_spend += (double)(end - begin) / CLOCKS_PER_SEC;

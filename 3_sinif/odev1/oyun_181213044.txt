@@ -1,0 +1,13 @@
+rdeger 52
+A: 99, B: 9999
+oyuncu 1  Geçen süre: 2.72 saniye
+oyuncu 1 tahmini: 12
+oyuncu 2  Geçen süre: 1.36 saniye
+oyuncu 2 tahmini: 12
+oyuncu 1  Geçen süre: 0.73 saniye
+oyuncu 1 tahmini: 32
+oyuncu 2  Geçen süre: 1.77 saniye
+oyuncu 2 tahmini: 123
+Aralık disi. Oyuncu 2 Kaybetti
+kazanan oyuncu  1
+.Toplam sure 6.6
